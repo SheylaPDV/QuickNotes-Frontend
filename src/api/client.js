@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const client = axios.create({
-  baseURL: process.env.QUICKNOTES_APP_API_BASE_URL, // Corregir la URL base aquí
+  baseURL: process.env.REACT_APP_API_BASE_URL, // Corregir la URL base aquí
 });
 
 client.interceptors.response.use(
