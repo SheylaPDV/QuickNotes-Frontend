@@ -1,17 +1,124 @@
-/* Estilos para el contenedor principal */
+/* Estilo para el contenedor de la lista de tareas */
 .task-list {
-  margin: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #333; /* Fondo oscuro */
+  color: #fff; /* Texto blanco para contraste */
+  padding: 20px; /* Espaciado alrededor del contenido */
+  border-radius: 8px; /* Bordes redondeados */
+  max-width: 600px; /* Ancho máximo para la lista */
+  margin: auto; /* Centrar la lista */
 }
 
-/* Estilos para cada tarea en la lista */
+/* Estilo para el título */
+.task-list h1 {
+  color: #4caf50; /* Color del título */
+  text-align: center; /* Centrar el título */
+  font-family: "Arial", sans-serif; /* Fuente del título */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+/* Estilo para cada tarea */
 .task-item {
-  margin-bottom: 10px;
-  padding: 5px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 3px;
+  background-color: #000000; /* Fondo ligeramente más claro que el contenedor */
+  padding: 10px; /* Espaciado dentro de cada tarea */
+  margin: 10px 0; /* Margen arriba y abajo para separar tareas */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+  transition: transform 0.3s ease; /* Suaviza la transición */
+  cursor: pointer;
+}
+
+.task-item:hover {
+  transform: scale(1.02) translateZ(10px); /* Aumenta ligeramente el tamaño y lo mueve hacia delante */
+}
+
+.task-item h4 {
+  color: #bf4060;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* other */
+.info {
+  margin: 20px 0;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* block-$ */
+.block-effect {
+  font-size: calc(3px + 2vw);
+}
+
+.block-reveal {
+  --t: calc(var(--td) + var(--d));
+
+  color: transparent;
+  padding: 4px;
+
+  position: relative;
+  overflow: hidden;
+
+  animation: revealBlock 0s var(--t) forwards;
+}
+
+.block-reveal::after {
+  content: "";
+
+  width: 0%;
+  height: 100%;
+  padding-bottom: 4px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: var(--bc);
+  animation: revealingIn var(--td) var(--d) forwards,
+    revealingOut var(--td) var(--t) forwards;
+}
+
+/* animations */
+@keyframes revealBlock {
+  100% {
+    color: #ffffff;
+  }
+}
+
+@keyframes revealingIn {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes revealingOut {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 0%, 0.6);
+  font-size: 16px;
 }

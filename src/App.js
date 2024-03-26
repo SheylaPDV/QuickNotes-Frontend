@@ -1,5 +1,4 @@
 import "./App.css";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { getTasks } from "./service";
 
@@ -21,13 +20,28 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1>Lista de Tareas</h1>
+    <div className='task-list'>
+      <h1 className='block-effect' style={{ "--td": "1.2s" }}>
+        <div
+          className='block-reveal'
+          style={{ "--bc": "#4040bf", "--d": ".1s" }}>
+          Quick
+        </div>
+        <div
+          className='block-reveal'
+          style={{ "--bc": "#bf4060", "--d": ".5s" }}>
+          Notes
+        </div>
+      </h1>
+
       <ul>
         {tasks.map((task) => (
-          <li key={task.id}>
-            {task.title} - {task.coment}
-          </li>
+          <div className='task-container'>
+            <div key={task.id} className='task-item'>
+              <h4>{task.title}</h4>
+              <p>{task.coment}</p>
+            </div>
+          </div>
         ))}
       </ul>
     </div>
