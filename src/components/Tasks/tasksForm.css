@@ -1,0 +1,40 @@
+/* Estilo general del formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaciado entre los elementos del formulario */
+  background-color: #333; /* Color de fondo */
+  padding: 20px; /* Padding interior */
+  max-width: 400px; /* Ancho máximo */
+  margin: auto; /* Centra el formulario horizontalmente */
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"] {
+  padding: 8px 10px; /* Padding interior */
+  font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Cambia el estilo del borde al enfocar */
+input[type="text"]:focus {
+  outline: none; /* Elimina el outline predeterminado */
+}
+
+.button_slide {
+  color: #fff;
+  border: 2px solid #bf4060;
+  border-radius: 0px;
+  padding: 15px 33px;
+  display: inline-block;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #bf4060;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slide_right:hover {
+  box-shadow: inset 400px 0 0 0 #bf4060;
+}

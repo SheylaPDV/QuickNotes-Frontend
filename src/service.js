@@ -7,3 +7,9 @@ export const getTasks = async () => {
   console.log(url);
   return client.get(url);
 };
+
+export const postTasks = async (newTask) => {
+  const url = tasksBaseUrl;
+  console.log(url);
+  return client.post(url, newTask);
+};
